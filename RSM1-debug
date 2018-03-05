@@ -1,5 +1,5 @@
 /**
- * Test Commit
+ * re-Test Commit
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  *  in compliance with the License. You may obtain a copy of the License at:
  *
@@ -35,7 +35,7 @@ metadata {
 		standardTile("refresh", "device.switch", width: 2, height: 2, inactiveLabel: false, decoration: "flat") {
 			state "default", label:'', action:"refresh.refresh", icon:"st.secondary.refresh"
 		}
-        
+
             standardTile("configure", "device.switch", width: 2, height: 2, inactiveLabel: false, decoration: "flat") {
             state "default", label:"", action:"configure", icon:"st.secondary.configure"
             }
@@ -76,7 +76,7 @@ def zwaveEvent(physicalgraph.zwave.commands.basicv1.BasicReport cmd) {
 }
 
 def zwaveEvent(physicalgraph.zwave.commands.basicv1.BasicSet cmd) {
-	log.debug "BasicSet ${description}"	
+	log.debug "BasicSet ${description}"
 	[name: "switch", value: cmd.value ? "on" : "off", type: "physical"]
 }
 
@@ -87,7 +87,7 @@ def zwaveEvent(physicalgraph.zwave.commands.switchbinaryv1.SwitchBinaryReport cm
 
 def zwaveEvent(physicalgraph.zwave.commands.configurationv1.ConfigurationReport cmd) {
 	log.debug "Command ${cmd}"
-	
+
 }
 
 def zwaveEvent(physicalgraph.zwave.commands.hailv1.Hail cmd) {
